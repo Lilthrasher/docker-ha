@@ -1,0 +1,10 @@
+services:
+  myspeed:
+    image: germannewsmaker/myspeed
+    container_name: myspeed
+    restart: unless-stopped
+    ports:
+      - ${PORT}:5216
+    volumes:
+      - /etc/timezone:/etc/timezone
+      - ./myspeed-data:/myspeed/data

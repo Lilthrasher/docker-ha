@@ -1,0 +1,12 @@
+services:
+  portainer:
+    image: portainer/portainer-ce:latest
+    container_name: portainer
+    restart: unless-stopped
+    ports:
+      - ${PORT_PORT}:9000
+    volumes:
+      - /etc/timezone:/etc/timezone
+      - ${PORTAINER_DIR}:/data
+      - ${DOCKER_VOLUMES}
+      - ${SECRET_DIR}
